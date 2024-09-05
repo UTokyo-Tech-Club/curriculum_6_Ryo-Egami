@@ -5,10 +5,11 @@ import { useState } from "react";
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [age, setAge] = useState(""); 
 
   const handleSubmit = (submit) => {
     submit.preventDefault();
-    console.log("onSubmit: ", name, email);
+    console.log("onSubmit: ", name, email, age); 
   };
 
   return (
@@ -40,6 +41,13 @@ function App() {
             style={{ marginBottom: 20 }}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+          ></input>
+          <label>Age: </label> 
+          <input
+            type={"number"}
+            style={{ marginBottom: 20 }}
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
           ></input>
           <button type={"submit"}>Submit</button>
         </form>
