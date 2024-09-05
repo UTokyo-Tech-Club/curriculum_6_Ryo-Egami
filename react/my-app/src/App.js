@@ -8,7 +8,7 @@ function App() {
   const [age, setAge] = useState(""); 
 
   const handleSubmit = (submit) => {
-    submit.preventDefault();
+    submit.preventDefault();//デフォルトのフォーム送信を防ぎ、JSでフォームを制御するため
     console.log("onSubmit: ", name, email, age); 
   };
 
@@ -32,7 +32,7 @@ function App() {
           <label>Name: </label>
           <input
             type={"text"}
-            value={name}
+            value={name}//入力欄に書かれた内容がReactのstateとリンクするようになるので、表示がリアルタイムで更新される
             onChange={(e) => setName(e.target.value)}
           ></input>
           <label>Email: </label>
