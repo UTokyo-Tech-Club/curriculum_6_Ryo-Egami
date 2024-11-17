@@ -28,6 +28,13 @@ func TestFizzBuzz(t *testing.T) {
 			},
 			want: []string{"Fizz", "22", "23", "Fizz", "Buzz", "26", "Fizz", "28", "29", "FizzBuzz"},
 		},
+		{
+			name: "0から-5の値でFizzBuzzテスト",
+			args: args{
+				numbers: []int{0, -1, -2, -3, -4, -5},
+			},
+			want: []string{"0", "-1", "-2", "-3", "-4", "-5"},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

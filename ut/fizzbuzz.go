@@ -13,14 +13,18 @@ func FizzBuzz(numbers []int) []string {
 	result := make([]string, 0, len(numbers))
 
 	for _, n := range numbers {
-		switch {
-		case isFizzBuzz(n): // 3の倍数かつ5の倍数
-			result = append(result, fizzbuzz)
-		case isFizz(n): // 3の倍数
-			result = append(result, fizz)
-		case isBuzz(n): // 5の倍数
-			result = append(result, buzz)
-		default:
+		if n > 0 { // 正の数の場合のみ判定
+			switch {
+			case isFizzBuzz(n): // 3の倍数かつ5の倍数
+				result = append(result, fizzbuzz)
+			case isFizz(n): // 3の倍数
+				result = append(result, fizz)
+			case isBuzz(n): // 5の倍数
+				result = append(result, buzz)
+			default:
+				result = appendNum(result, n)
+			}
+		} else { // 0または負の数の場合は数値をそのまま返す
 			result = appendNum(result, n)
 		}
 	}
